@@ -36,3 +36,223 @@
     transform: rotate(360deg);
   }
 }
+
+/* Your existing button styles - keeping as fallback */
+button {
+  background-color: #2b4539;
+  color: #ffffff;
+  padding: 14px 28px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  border: 2px solid #61dca3;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+button:hover {
+  background-color: #61dca3;
+  color: #000000;
+  transform: translateY(-2px);
+  box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.4);
+}
+
+/* STRONGER GLITCH BUTTON STYLES - Using !important to override conflicts */
+button.glitch-button {
+  /* Enhanced size and spacing */
+  padding: 18px 36px !important;
+  font-size: 1.3rem !important;
+  font-weight: 700 !important;
+  min-width: 180px !important;
+  height: 60px !important;
+  margin: 10px !important;
+
+  /* Your color scheme enhanced */
+  background: linear-gradient(
+    135deg,
+    #2b4539 0%,
+    #1e3329 50%,
+    #2b4539 100%
+  ) !important;
+  border: 3px solid #61dca3 !important;
+  border-radius: 10px !important;
+  color: #61dca3 !important;
+
+  /* Enhanced typography */
+  font-family: "Courier New", monospace !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1.2px !important;
+  text-shadow: 0 0 10px rgba(97, 220, 163, 0.3) !important;
+
+  /* Enhanced effects */
+  cursor: pointer !important;
+  position: relative !important;
+  overflow: hidden !important;
+  transition: all 0.4s ease !important;
+
+  /* Enhanced shadow */
+  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 0 20px rgba(97, 220, 163, 0.1) !important;
+}
+
+/* Animated background effect */
+button.glitch-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(97, 220, 163, 0.3),
+    transparent
+  );
+  transition: left 0.6s ease;
+  z-index: 1;
+}
+
+button.glitch-button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: inherit;
+  z-index: -1;
+}
+
+/* Enhanced hover effects */
+button.glitch-button:hover {
+  background: linear-gradient(
+    135deg,
+    #61dca3 0%,
+    #4db88a 50%,
+    #61dca3 100%
+  ) !important;
+  color: #1a2f24 !important;
+  border-color: #ffffff !important;
+  text-shadow: 0 0 15px rgba(26, 47, 36, 0.5) !important;
+  transform: translateY(-3px) scale(1.02) !important;
+
+  box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.5), 0 0 30px rgba(97, 220, 163, 0.6),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
+}
+
+button.glitch-button:hover::before {
+  left: 100%;
+}
+
+/* Active/pressed state */
+button.glitch-button:active {
+  transform: translateY(-1px) scale(1.01) !important;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3), 0 0 20px rgba(97, 220, 163, 0.4) !important;
+}
+
+/* Glitch animation keyframes */
+@keyframes glitch-shake {
+  0%,
+  100% {
+    transform: translateY(-3px) scale(1.02) translate(0, 0);
+  }
+  10% {
+    transform: translateY(-3px) scale(1.02) translate(-1px, -1px);
+  }
+  20% {
+    transform: translateY(-3px) scale(1.02) translate(1px, 1px);
+  }
+  30% {
+    transform: translateY(-3px) scale(1.02) translate(-1px, 1px);
+  }
+  40% {
+    transform: translateY(-3px) scale(1.02) translate(1px, -1px);
+  }
+  50% {
+    transform: translateY(-3px) scale(1.02) translate(-1px, -1px);
+  }
+  60% {
+    transform: translateY(-3px) scale(1.02) translate(1px, 1px);
+  }
+  70% {
+    transform: translateY(-3px) scale(1.02) translate(-1px, 1px);
+  }
+  80% {
+    transform: translateY(-3px) scale(1.02) translate(1px, -1px);
+  }
+  90% {
+    transform: translateY(-3px) scale(1.02) translate(-1px, -1px);
+  }
+}
+
+/* Random glitch effect on hover */
+button.glitch-button:hover {
+  animation: glitch-shake 0.5s ease-in-out !important;
+}
+
+/* Pulse effect for certain buttons */
+@keyframes pulse-glow {
+  0%,
+  100% {
+    box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.5),
+      0 0 30px rgba(97, 220, 163, 0.6);
+  }
+  50% {
+    box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.5),
+      0 0 40px rgba(97, 220, 163, 0.8);
+  }
+}
+
+button.glitch-button:nth-child(3n):hover {
+  animation: glitch-shake 0.5s ease-in-out, pulse-glow 2s infinite !important;
+}
+
+/* Special styling for first button (Education) */
+button.glitch-button:first-child {
+  background: linear-gradient(
+    135deg,
+    #61b3dc 0%,
+    #4a8fb5 50%,
+    #61b3dc 100%
+  ) !important;
+  border-color: #61b3dc !important;
+  color: #61b3dc !important;
+  text-shadow: 0 0 10px rgba(97, 179, 220, 0.3) !important;
+}
+
+button.glitch-button:first-child:hover {
+  background: linear-gradient(
+    135deg,
+    #87ceeb 0%,
+    #61b3dc 50%,
+    #87ceeb 100%
+  ) !important;
+  color: #1a2f24 !important;
+  border-color: #ffffff !important;
+  box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.5), 0 0 30px rgba(97, 179, 220, 0.6),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  button.glitch-button {
+    min-width: 150px !important;
+    padding: 16px 30px !important;
+    font-size: 1.1rem !important;
+    height: 54px !important;
+    margin: 8px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  button.glitch-button {
+    min-width: 130px !important;
+    padding: 14px 26px !important;
+    font-size: 1rem !important;
+    height: 50px !important;
+    margin: 6px !important;
+  }
+}
