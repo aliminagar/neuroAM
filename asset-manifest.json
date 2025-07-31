@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/neuroAM/static/css/main.b630f0c4.css",
+    "main.js": "/neuroAM/static/js/main.f5ac2059.js",
+    "static/js/453.d5af7f2a.chunk.js": "/neuroAM/static/js/453.d5af7f2a.chunk.js",
+    "static/media/resume.pdf": "/neuroAM/static/media/resume.71ba6168cfa9eaef6553.pdf",
+    "static/media/Glitch.png": "/neuroAM/static/media/Glitch.d4fb872aa171663c85ca.png",
+    "index.html": "/neuroAM/index.html",
+    "main.b630f0c4.css.map": "/neuroAM/static/css/main.b630f0c4.css.map",
+    "main.f5ac2059.js.map": "/neuroAM/static/js/main.f5ac2059.js.map",
+    "453.d5af7f2a.chunk.js.map": "/neuroAM/static/js/453.d5af7f2a.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b630f0c4.css",
+    "static/js/main.f5ac2059.js"
+  ]
+}
