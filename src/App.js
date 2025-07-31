@@ -386,36 +386,49 @@ function App() {
             marginBottom: "20px",
             color: "#61dca3",
           }}
-        >
-          Welcome to Neuro Glitch
-        </h1>
-
-        <h2
+        ></h1>
+        <div
           style={{
-            fontSize: "3rem",
-            fontWeight: "bold",
-            marginBottom: "20px",
-            color: "#ffffff",
-            textShadow: "2px 2px 4px rgba(0,0,0,0.8)",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            padding: "40px 20px",
+            textAlign: "center",
+            color: "white",
           }}
         >
-          Alireza Minagar, MD, MBA, MS (Bioinformatics)
-        </h2>
+          <img
+            src="/logo192.png" // You can also use "./logo192.png" if needed
+            alt="Neuro Glitch Logo"
+            style={{ width: 150, marginBottom: 20 }}
+          />
+          <h1 style={{ fontSize: "3rem", margin: 0 }}>
+            Welcome to Neuro Glitch
+          </h1>
+          <h2
+            style={{
+              fontSize: "2.5rem",
+              fontWeight: "bold",
+              marginTop: "10px",
+            }}
+          >
+            Alireza Minagar, MD, MBA, MS
+          </h2>
 
-        <p
-          style={{
-            fontSize: "1.5rem",
-            color: "#e0e0e0",
-            textShadow: "1px 1px 2px rgba(0,0,0,0.8)",
-            marginBottom: "30px",
-          }}
-        >
-          Software Engineer
-        </p>
+          <h3
+            style={{ fontSize: "2rem", fontWeight: "bold", marginTop: "5px" }}
+          >
+            (Bioinformatics)
+          </h3>
+
+          <p style={{ fontSize: "1.6rem", marginTop: "10px" }}>
+            Software Engineer
+          </p>
+        </div>
 
         <div
           style={{
-            fontSize: "1.2rem",
+            fontSize: "1.4rem",
             color: "#61dca3",
             fontStyle: "italic",
             textShadow: "1px 1px 2px rgba(0,0,0,0.8)",
@@ -424,12 +437,11 @@ function App() {
             maxWidth: "700px",
             margin: "0 auto",
             marginBottom: "30px",
+            textAlign: "center",
           }}
         >
           "Where neural pathways meet neural networks, the future of medicine is
-          coded—
-          <br />
-          bridging the synapses of human intuition with the algorithms of
+          coded. Bridging the synapses of human intuition with the algorithms of
           artificial intelligence."
         </div>
 
@@ -473,18 +485,28 @@ function App() {
         <div
           style={{
             marginTop: "40px",
-            display: "flex",
-            flexWrap: "wrap",
-            justifyContent: "center",
-            gap: "15px",
+            display: "flex", // Use flex layout
+            flexWrap: "nowrap", // Prevent wrapping to a new line
+            justifyContent: "center", // Center horizontally
+            gap: "20px", // Space between buttons
             zIndex: 10,
           }}
         >
           <button
             className="glitch-button"
+            style={{
+              whiteSpace: "nowrap",
+              padding: "10px 24px",
+              minWidth: "160px",
+              textAlign: "center",
+              lineHeight: "1.2",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
             onClick={() => setShowEducation(!showEducation)}
           >
-            My Education
+            MY EDUCATION
           </button>
 
           <button
@@ -559,6 +581,12 @@ function App() {
 
           <button
             className="glitch-button"
+            style={{
+              paddingTop: "4px",
+              paddingBottom: "6px",
+              lineHeight: "1.15",
+              whiteSpace: "normal", // allows multi-line
+            }}
             onClick={() => {
               setShowButtonPreloader(true);
               setTimeout(() => {
@@ -570,8 +598,11 @@ function App() {
               }, 1000);
             }}
           >
-            LinkedIn Newsletter
+            LINKEDIN
+            <br />
+            <span className="newsletter-text">NEWSLETTER</span>
           </button>
+
           <button
             className="glitch-button"
             onClick={() => {
