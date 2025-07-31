@@ -15,7 +15,9 @@ This portfolio represents the journey from neurology to software engineering, hi
 
 ## 🚀 Live Demo
 
-**[View Live Portfolio](https://aliminagar.github.io/neuro-glitch-portfolio)**
+\*\*[View Live Portfolio](https://aliminagar.github.io/neuro-glitch-portfolio/)
+
+(https://aliminagar.github.io/neuro-glitch-portfolio)\*\*
 
 ## ✨ Features
 

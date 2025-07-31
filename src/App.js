@@ -1,6 +1,7 @@
 import React from "react";
 import { useRef, useEffect, useState } from "react";
 import "./App.css";
+import resumePDF from "./assets/resume.pdf";
 import profileImage from "./images/Dr. Minagar-- Image 2019.jpg";
 import logo from "./images/Glitch.png";
 import Preloader from "./Preloader.js";
@@ -545,9 +546,13 @@ function App() {
 
           <button
             className="glitch-button"
-            onClick={() =>
-              window.open("/resume/Alireza_Minagar_Full_Resume.pdf", "_blank")
-            }
+            onClick={() => {
+              setShowButtonPreloader(true);
+              setTimeout(() => {
+                setShowButtonPreloader(false);
+                window.open(resumePDF, "_blank");
+              }, 1000);
+            }}
           >
             Resume
           </button>
