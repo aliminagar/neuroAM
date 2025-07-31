@@ -314,21 +314,46 @@ const LetterGlitch = ({
   );
 };
 
+export default App;
+
 function App() {
   const [showEducation, setShowEducation] = useState(false);
   const [showButtonPreloader, setShowButtonPreloader] = useState(false);
+
   return (
     <div
       className="App"
-      style={{ height: "100vh", width: "100vw", margin: 0, padding: 0 }}
+      style={{
+        height: "100vh",
+        width: "100vw",
+        margin: 0,
+        padding: 0,
+        position: "relative",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+      }}
     >
       {showButtonPreloader && <Preloader />}
-      <LetterGlitch
-        glitchSpeed={50}
-        centerVignette={true}
-        outerVignette={false}
-        smooth={true}
-      />
+
+      {/* Background LetterGlitch - positioned absolutely behind everything */}
+      <div
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
+          zIndex: 1,
+        }}
+      >
+        <LetterGlitch
+          glitchSpeed={50}
+          centerVignette={true}
+          outerVignette={false}
+          smooth={true}
+        />
+      </div>
 
       {/* Logo in top-left corner */}
       <div
@@ -361,15 +386,13 @@ function App() {
           }}
         />
       </div>
+
       <AtomicClock />
 
-      {/* Main content */}
+      {/* Main content - using flexbox centering */}
       <div
         style={{
-          position: "absolute",
-          top: "50vh",
-          left: "50%",
-          transform: "translate(-50%, -50%)",
+          position: "relative", // Changed from absolute
           color: "white",
           textAlign: "center",
           zIndex: 10,
@@ -440,7 +463,6 @@ function App() {
           artificial intelligence."
         </div>
 
-        {/* Profile Image */}
         <div
           style={{
             marginTop: "30px",
@@ -448,171 +470,218 @@ function App() {
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
+            gap: "40px",
+            flexWrap: "wrap",
           }}
         >
-          <img
-            src={profileImage}
-            alt="Dr. Alireza Minagar"
+          {/* Left Column - First 4 buttons */}
+          <div
             style={{
-              width: "200px",
-              height: "200px",
-              borderRadius: "50%",
-              border: "4px solid #61dca3",
-              boxShadow:
-                "0 0 25px rgba(97, 220, 163, 0.4), 0 0 50px rgba(97, 220, 163, 0.2)",
-              objectFit: "cover",
-              transition: "all 0.3s ease",
-            }}
-            onMouseEnter={(e) => {
-              e.target.style.transform = "scale(1.05)";
-              e.target.style.boxShadow =
-                "0 0 35px rgba(97, 220, 163, 0.6), 0 0 70px rgba(97, 220, 163, 0.3)";
-            }}
-            onMouseLeave={(e) => {
-              e.target.style.transform = "scale(1)";
-              e.target.style.boxShadow =
-                "0 0 25px rgba(97, 220, 163, 0.4), 0 0 50px rgba(97, 220, 163, 0.2)";
-            }}
-          />
-        </div>
-
-        {/* Buttons */}
-        <div
-          style={{
-            marginTop: "40px",
-            display: "flex", // Use flex layout
-            flexWrap: "nowrap", // Prevent wrapping to a new line
-            justifyContent: "center", // Center horizontally
-            gap: "20px", // Space between buttons
-            zIndex: 10,
-          }}
-        >
-          <button
-            className="glitch-button"
-            style={{
-              whiteSpace: "nowrap",
-              padding: "10px 24px",
-              minWidth: "160px",
-              textAlign: "center",
-              lineHeight: "1.2",
               display: "flex",
+              flexDirection: "column",
+              gap: "15px",
               alignItems: "center",
-              justifyContent: "center",
             }}
-            onClick={() => setShowEducation(!showEducation)}
           >
-            MY EDUCATION
-          </button>
+            <button
+              className="glitch-button"
+              style={{
+                whiteSpace: "nowrap",
+                padding: "10px 24px",
+                minWidth: "160px",
+                textAlign: "center",
+                lineHeight: "1.2",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                height: "60px",
+              }}
+              onClick={() => setShowEducation(!showEducation)}
+            >
+              MY EDUCATION
+            </button>
 
-          <button
-            className="glitch-button"
-            onClick={() => {
-              setShowButtonPreloader(true);
-              setTimeout(() => {
-                setShowButtonPreloader(false);
-                window.open(
-                  "https://pubmed.ncbi.nlm.nih.gov/?term=minagar",
-                  "_blank"
-                );
-              }, 1000);
-            }}
-          >
-            PubMed
-          </button>
+            <button
+              className="glitch-button"
+              style={{
+                height: "60px",
+                minWidth: "160px",
+              }}
+              onClick={() => {
+                setShowButtonPreloader(true);
+                setTimeout(() => {
+                  setShowButtonPreloader(false);
+                  window.open(
+                    "https://pubmed.ncbi.nlm.nih.gov/?term=minagar",
+                    "_blank"
+                  );
+                }, 1000);
+              }}
+            >
+              PubMed
+            </button>
 
-          <button
-            className="glitch-button"
-            onClick={() => {
-              setShowButtonPreloader(true);
-              setTimeout(() => {
-                setShowButtonPreloader(false);
-                window.open(
-                  "https://www.linkedin.com/in/alireza-minagar-md-mba-ms-biotech-bioinformatics-b450aa173",
-                  "_blank"
-                );
-              }, 1000);
-            }}
-          >
-            LinkedIn
-          </button>
+            <button
+              className="glitch-button"
+              style={{
+                height: "60px",
+                minWidth: "160px",
+              }}
+              onClick={() => {
+                setShowButtonPreloader(true);
+                setTimeout(() => {
+                  setShowButtonPreloader(false);
+                  window.open(
+                    "https://www.linkedin.com/in/alireza-minagar-md-mba-ms-biotech-bioinformatics-b450aa173",
+                    "_blank"
+                  );
+                }, 1000);
+              }}
+            >
+              LinkedIn
+            </button>
 
-          <button
-            className="glitch-button"
-            onClick={() => {
-              setShowButtonPreloader(true);
-              setTimeout(() => {
-                setShowButtonPreloader(false);
-                window.open("https://medium.com/@aminagar_38889", "_blank");
-              }, 1000);
-            }}
-          >
-            Medium
-          </button>
-          <button
-            className="glitch-button"
-            onClick={() => {
-              setShowButtonPreloader(true);
-              setTimeout(() => {
-                setShowButtonPreloader(false);
-                window.open("https://github.com/aliminagar", "_blank");
-              }, 1000);
-            }}
-          >
-            GitHub
-          </button>
+            <button
+              className="glitch-button"
+              style={{
+                height: "60px",
+                minWidth: "160px",
+              }}
+              onClick={() => {
+                setShowButtonPreloader(true);
+                setTimeout(() => {
+                  setShowButtonPreloader(false);
+                  window.open("https://medium.com/@aminagar_38889", "_blank");
+                }, 1000);
+              }}
+            >
+              Medium
+            </button>
+          </div>
 
-          <button
-            className="glitch-button"
-            onClick={() => {
-              setShowButtonPreloader(true);
-              setTimeout(() => {
-                setShowButtonPreloader(false);
-                window.open(resumePDF, "_blank");
-              }, 1000);
-            }}
-          >
-            Resume
-          </button>
-
-          <button
-            className="glitch-button"
+          {/* Center - Profile Image */}
+          <div
             style={{
-              paddingTop: "4px",
-              paddingBottom: "6px",
-              lineHeight: "1.15",
-              whiteSpace: "normal", // allows multi-line
-            }}
-            onClick={() => {
-              setShowButtonPreloader(true);
-              setTimeout(() => {
-                setShowButtonPreloader(false);
-                window.open(
-                  "https://www.linkedin.com/newsletters/7331481504763555840/",
-                  "_blank"
-                );
-              }, 1000);
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
             }}
           >
-            LINKEDIN
-            <br />
-            <span className="newsletter-text">NEWSLETTER</span>
-          </button>
+            <img
+              src={profileImage}
+              alt="Dr. Alireza Minagar"
+              style={{
+                width: "250px",
+                height: "250px",
+                borderRadius: "50%",
+                border: "4px solid #61dca3",
+                boxShadow:
+                  "0 0 25px rgba(97, 220, 163, 0.4), 0 0 50px rgba(97, 220, 163, 0.2)",
+                objectFit: "cover",
+                transition: "all 0.3s ease",
+              }}
+              onMouseEnter={(e) => {
+                e.target.style.transform = "scale(1.05)";
+                e.target.style.boxShadow =
+                  "0 0 35px rgba(97, 220, 163, 0.6), 0 0 70px rgba(97, 220, 163, 0.3)";
+              }}
+              onMouseLeave={(e) => {
+                e.target.style.transform = "scale(1)";
+                e.target.style.boxShadow =
+                  "0 0 25px rgba(97, 220, 163, 0.4), 0 0 50px rgba(97, 220, 163, 0.2)";
+              }}
+            />
+          </div>
 
-          <button
-            className="glitch-button"
-            onClick={() => {
-              setShowButtonPreloader(true);
-              setTimeout(() => {
-                setShowButtonPreloader(false);
-                window.open(
-                  "https://www.amazon.com/s?k=alireza+minagar&i=digital-text&crid=3K41MSI87EZRS&sprefix=%2Cdigital-text%2C120&ref=nb_sb_ss_recent_1_0_recent",
-                  "_blank"
-                );
-              }, 1000);
+          {/* Right Column - Last 4 buttons */}
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              gap: "15px",
+              alignItems: "center",
             }}
           >
-            Amazon Books
-          </button>
+            <button
+              className="glitch-button"
+              style={{
+                height: "60px",
+                minWidth: "160px",
+              }}
+              onClick={() => {
+                setShowButtonPreloader(true);
+                setTimeout(() => {
+                  setShowButtonPreloader(false);
+                  window.open("https://github.com/aliminagar", "_blank");
+                }, 1000);
+              }}
+            >
+              GitHub
+            </button>
+
+            <button
+              className="glitch-button"
+              style={{
+                height: "60px",
+                minWidth: "160px",
+              }}
+              onClick={() => {
+                setShowButtonPreloader(true);
+                setTimeout(() => {
+                  setShowButtonPreloader(false);
+                  window.open(resumePDF, "_blank");
+                }, 1000);
+              }}
+            >
+              Resume
+            </button>
+
+            <button
+              className="glitch-button"
+              style={{
+                height: "60px",
+                minWidth: "160px",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                flexDirection: "column",
+                lineHeight: "1.1",
+              }}
+              onClick={() => {
+                setShowButtonPreloader(true);
+                setTimeout(() => {
+                  setShowButtonPreloader(false);
+                  window.open(
+                    "https://www.linkedin.com/newsletters/7331481504763555840/",
+                    "_blank"
+                  );
+                }, 1000);
+              }}
+            >
+              <span>LINKEDIN</span>
+              <span>NEWSLETTER</span>
+            </button>
+
+            <button
+              className="glitch-button"
+              style={{
+                height: "60px",
+                minWidth: "160px",
+              }}
+              onClick={() => {
+                setShowButtonPreloader(true);
+                setTimeout(() => {
+                  setShowButtonPreloader(false);
+                  window.open(
+                    "https://www.amazon.com/s?k=alireza+minagar&i=digital-text&crid=3K41MSI87EZRS&sprefix=%2Cdigital-text%2C120&ref=nb_sb_ss_recent_1_0_recent",
+                    "_blank"
+                  );
+                }, 1000);
+              }}
+            >
+              Amazon Books
+            </button>
+          </div>
         </div>
       </div>
 
@@ -620,7 +689,7 @@ function App() {
       {showEducation && (
         <div
           style={{
-            position: "absolute",
+            position: "fixed",
             top: "50%",
             left: "50%",
             transform: "translate(-50%, -50%)",
@@ -721,5 +790,3 @@ function App() {
     </div>
   );
 }
-
-export default App;
