@@ -2,7 +2,7 @@ import React from "react";
 import { useRef, useEffect, useState } from "react";
 import "./App.css";
 import resumePDF from "./assets/resume.pdf";
-import profileImage from "./images/Dr. Minagar-- Image 2019.jpg";
+import profileImage from "./images/image.jpg";
 import logo from "./images/Glitch.png";
 import Preloader from "./Preloader.js";
 import AtomicClock from "./AtomicClock.js";
