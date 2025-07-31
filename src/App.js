@@ -397,11 +397,6 @@ function App() {
             color: "white",
           }}
         >
-          <img
-            src="/logo192.png" // You can also use "./logo192.png" if needed
-            alt="Neuro Glitch Logo"
-            style={{ width: 150, marginBottom: 20 }}
-          />
           <h1 style={{ fontSize: "3rem", margin: 0 }}>
             Welcome to Neuro Glitch
           </h1>
