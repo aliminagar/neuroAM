@@ -259,7 +259,7 @@ const LetterGlitch = ({
       cancelAnimationFrame(animationRef.current);
       window.removeEventListener("resize", handleResize);
     };
-  }, [glitchSpeed, smooth]);
+  }, [glitchSpeed, smooth]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const containerStyle = {
     position: "relative",
