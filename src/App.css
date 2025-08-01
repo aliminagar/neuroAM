@@ -13,15 +13,19 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.App-header > div {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-wrap: wrap;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 40px;
+  padding: 20px;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Prevents horizontal scrolling */
+body {
+  overflow-x: hidden;
 }
 
 .App-link {
