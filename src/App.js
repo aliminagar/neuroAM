@@ -395,7 +395,7 @@ function App() {
           color: "white",
           textAlign: "center",
           zIndex: 10,
-          maxWidth: "900px",
+          maxWidth: "1200px",
           padding: "0 30px",
         }}
       >
