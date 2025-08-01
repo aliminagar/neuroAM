@@ -452,15 +452,16 @@ function App() {
           coded—bridging the synapses of human intuition with the algorithms of
           artificial intelligence."
         </div>
+
         <div
           style={{
             marginTop: "20px",
             marginBottom: "20px",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            gap: "10px",
-            flexWrap: "wrap",
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))",
+            gap: "8px",
+            maxWidth: "100%",
+            justifyItems: "center",
           }}
         >
           {/* Left Column - First 4 buttons */}
@@ -617,7 +618,10 @@ function App() {
                 setShowButtonPreloader(true);
                 setTimeout(() => {
                   setShowButtonPreloader(false);
-                  window.open("resume.pdf", "_blank");
+                  window.open(
+                    "https://docs.google.com/document/d/1FQT78qNBPoYWYB0X4nE0Z2BToIUkrjVG/edit?usp=sharing&ouid=105143804351050032852&rtpof=true&sd=true",
+                    "_blank"
+                  );
                 }, 1000);
               }}
             >
