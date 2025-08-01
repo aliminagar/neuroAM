@@ -1,7 +1,6 @@
 import React from "react";
 import { useRef, useEffect, useState } from "react";
 import "./App.css";
-import resumePDF from "./assets/resume.pdf";
 import profileImage from "./images/image.jpg";
 import logo from "./images/Glitch.png";
 import Preloader from "./Preloader.js";
@@ -618,7 +617,6 @@ function App() {
             >
               GitHub
             </button>
-
             <button
               className="glitch-button"
               style={{
@@ -629,7 +627,7 @@ function App() {
                 setShowButtonPreloader(true);
                 setTimeout(() => {
                   setShowButtonPreloader(false);
-                  window.open(resumePDF, "_blank");
+                  window.open("resume.pdf", "_blank");
                 }, 1000);
               }}
             >
