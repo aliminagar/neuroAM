@@ -395,8 +395,8 @@ function App() {
           color: "white",
           textAlign: "center",
           zIndex: 10,
-          maxWidth: "1200px",
-          padding: "0 30px",
+          maxWidth: "95vw",
+          padding: "0 15px",
         }}
       >
         {/* TextTrail Title */}
@@ -454,12 +454,12 @@ function App() {
         </div>
         <div
           style={{
-            marginTop: "30px",
-            marginBottom: "30px",
+            marginTop: "20px",
+            marginBottom: "20px",
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
-            gap: "40px",
+            gap: "10px",
             flexWrap: "wrap",
           }}
         >
@@ -560,8 +560,8 @@ function App() {
               src={profileImage}
               alt="Dr. Alireza Minagar"
               style={{
-                width: "250px",
-                height: "250px",
+                width: "200px",
+                height: "200px",
                 borderRadius: "50%",
                 border: "4px solid #61dca3",
                 boxShadow:
