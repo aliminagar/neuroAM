@@ -447,25 +447,11 @@ function App() {
           </p>
         </div>
 
-        <div
-          style={{
-            fontSize: "1.4rem",
-            color: "#61dca3",
-            fontStyle: "italic",
-            textShadow: "1px 1px 2px rgba(0,0,0,0.8)",
-            marginTop: "20px",
-            lineHeight: "1.6",
-            maxWidth: "700px",
-            margin: "0 auto",
-            marginBottom: "30px",
-            textAlign: "center",
-          }}
-        >
+        <div className="quote-text">
           "Where neural pathways meet neural networks, the future of medicine is
           coded—bridging the synapses of human intuition with the algorithms of
           artificial intelligence."
         </div>
-
         <div
           style={{
             marginTop: "30px",

@@ -180,3 +180,16 @@ button.glitch-button:active {
     margin: 3px !important;
   }
 }
+
+.quote-text {
+  font-size: 1.4rem !important;
+  color: white !important;
+  font-style: italic !important;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8) !important;
+  margin-top: 20px !important;
+  line-height: 1.6 !important;
+  max-width: 900px !important;
+  margin: 20px auto 30px auto !important;
+  text-align: center !important;
+  white-space: pre-line !important;
+}
