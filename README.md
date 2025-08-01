@@ -15,7 +15,7 @@ This portfolio represents the journey from neurology to software engineering, hi
 
 ## 🚀 Live Demo
 
-\*\*[View Live Portfolio](https://aliminagar.github.io/neuro-glitch-portfolio/)
+\*\*[View Live Portfolio](https://aliminagar.github.io/neuroAM)
 
 ## ✨ Features
 
@@ -48,7 +48,7 @@ Before running this project locally, ensure you have:
 
 1. **Clone the repository**
 
-   git clone https://github.com/aliminagar/neuro-glitch-portfolio.git
+   git clone https://aliminagar.github.io/neuroAM
    cd neuro-glitch-portfolio
 
 2. **Install dependencies**
@@ -142,14 +142,14 @@ This project is ready for deployment on various platforms:
 
 ### GitHub Pages
 
-```bash
 npm run build
 npm install --save-dev gh-pages
-# Add to package.json scripts: "deploy": "gh-pages -d build"
-npm run deploy
-```
 
-**Your site will be live at**: `https://aliminagar.github.io/neuro-glitch-portfolio`
+# Add to package.json scripts: "deploy": "gh-pages -d build"
+
+npm run deploy
+
+**Your site will be live at**: (https://aliminagar.github.io/neuroAM)
 
 ### Netlify
 
