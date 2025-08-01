@@ -17,10 +17,10 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 20px; /* Reduced gap for more horizontal space */
+  gap: 20px;
   padding: 20px;
-  max-width: 800px; /* Added max-width to limit container size */
-  margin: 0 auto; /* Center the container */
+  max-width: 800px;
+  margin: 0 auto;
   box-sizing: border-box;
 }
 
@@ -65,7 +65,6 @@ button:hover {
 }
 
 button.glitch-button {
-  /* Removed fixed width/max-width, added min-width for flexibility */
   min-width: 120px;
   height: 60px;
   padding: 8px 12px;
@@ -87,7 +86,7 @@ button.glitch-button {
   text-align: center;
   white-space: normal;
 
-  /* Colors and effects */
+  /* Colors and effects - Changed back to original green */
   background: linear-gradient(135deg, #2b4539 0%, #1e3329 50%, #2b4539 100%);
   border: 2px solid #61dca3;
   border-radius: 8px;
@@ -131,11 +130,11 @@ button.glitch-button::after {
   z-index: -1;
 }
 
-/* Enhanced hover effects */
+/* Enhanced hover effects - Changed back to original green */
 button.glitch-button:hover {
   background: linear-gradient(135deg, #61dca3 0%, #4db88a 50%, #61dca3 100%);
   color: #1a2f24;
-  border-color: #ffffff;
+  border-color: #61dca3; /* Changed back to green */
   text-shadow: 0 0 12px rgba(26, 47, 36, 0.5);
   transform: translateY(-2px);
   box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.5);
