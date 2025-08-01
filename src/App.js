@@ -408,7 +408,11 @@ function App() {
             marginBottom: "20px",
             color: "#61dca3",
           }}
-        ></h1>
+        >
+          {" "}
+          &nbsp;
+        </h1>
+
         <div
           style={{
             display: "flex",
@@ -458,7 +462,7 @@ function App() {
           }}
         >
           "Where neural pathways meet neural networks, the future of medicine is
-          coded. Bridging the synapses of human intuition with the algorithms of
+          coded—bridging the synapses of human intuition with the algorithms of
           artificial intelligence."
         </div>
 
