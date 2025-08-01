@@ -1,7 +1,54 @@
 .App {
   text-align: center;
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  display: flex;
+  align-items: flex-start; /* Changed to align items from the top */
+  justify-content: center; /* Centers content horizontally */
 }
 
+/* Style for the profile image container */
+.App .profile-image-container {
+  display: flex;
+  justify-content: center; /* Centers the image horizontally */
+  align-items: center; /* Centers vertically within its space, but top-aligned by App */
+  width: 100%;
+  margin-bottom: 20px; /* Space below image */
+  position: absolute; /* Positions it at the top */
+  top: 20px; /* Slight offset from the very top for padding */
+  left: 50%; /* Centers the container horizontally */
+  transform: translateX(-50%); /* Adjusts for the container's width */
+  padding: 0; /* Removed padding to avoid extra space */
+  z-index: 10; /* Ensures it stays above the background */
+}
+
+/* Style for the profile image itself */
+.App .profile-image-container img {
+  width: 220px; /* 10% larger than 200px (200 * 1.1) */
+  height: 220px; /* 10% larger than 200px */
+  border-radius: 50%;
+  border: 4px solid #61dca3; /* Matches your green theme */
+  box-shadow: 0 0 25px rgba(97, 220, 163, 0.4), 0 0 50px rgba(97, 220, 163, 0.2);
+  object-fit: cover;
+  transition: all 0.3s ease;
+}
+
+/* Hover effects for the image */
+.App .profile-image-container img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 35px rgba(97, 220, 163, 0.6), 0 0 70px rgba(97, 220, 163, 0.3);
+}
+
+/* Ensure the image hover leaves the original state */
+.App .profile-image-container img:not(:hover) {
+  transform: scale(1);
+  box-shadow: 0 0 25px rgba(97, 220, 163, 0.4), 0 0 50px rgba(97, 220, 163, 0.2);
+}
+
+/* Existing logo styles */
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -13,15 +60,17 @@
   }
 }
 
+/* Adjust header div to account for the image at the top */
 .App-header > div {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 20px; /* Ensure gap is small enough for wrapping */
+  gap: 20px;
   padding: 20px;
-  max-width: 800px; /* Limit container width to force wrapping */
-  margin: 0 auto; /* Center the container */
+  max-width: 800px;
+  margin: 0 auto;
   box-sizing: border-box;
+  margin-top: 260px; /* Adjusted for 220px image + top padding + margin */
 }
 
 /* Prevents horizontal scrolling */
@@ -42,7 +91,7 @@ body {
   }
 }
 
-/* Your existing button styles - keeping as fallback */
+/* Existing button styles - unchanged */
 button {
   background-color: #2b4539;
   color: #ffffff;
@@ -69,14 +118,10 @@ button.glitch-button {
   height: 60px;
   padding: 8px 12px;
   margin: 5px;
-
-  /* Layout */
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-
-  /* Typography */
   font-size: 0.9rem;
   font-weight: 700;
   font-family: "Courier New", monospace;
@@ -85,15 +130,11 @@ button.glitch-button {
   line-height: 1.1;
   text-align: center;
   white-space: normal;
-
-  /* Colors and effects - Green preserved */
   background: linear-gradient(135deg, #2b4539 0%, #1e3329 50%, #2b4539 100%);
   border: 2px solid #61dca3;
   border-radius: 8px;
   color: #61dca3;
   text-shadow: 0 0 8px rgba(97, 220, 163, 0.3);
-
-  /* Effects */
   cursor: pointer;
   position: relative;
   overflow: hidden;
@@ -130,11 +171,11 @@ button.glitch-button::after {
   z-index: -1;
 }
 
-/* Enhanced hover effects - Green preserved */
+/* Enhanced hover effects */
 button.glitch-button:hover {
   background: linear-gradient(135deg, #61dca3 0%, #4db88a 50%, #61dca3 100%);
   color: #1a2f24;
-  border-color: #61dca3; /* Green border on hover */
+  border-color: #61dca3;
   text-shadow: 0 0 12px rgba(26, 47, 36, 0.5);
   transform: translateY(-2px);
   box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.5);
