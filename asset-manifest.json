@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/neuroAM/static/css/main.91ed9d55.css",
+    "main.css": "/neuroAM/static/css/main.18b858b1.css",
     "main.js": "/neuroAM/static/js/main.00c0f868.js",
     "static/js/453.d5af7f2a.chunk.js": "/neuroAM/static/js/453.d5af7f2a.chunk.js",
     "static/media/Glitch.png": "/neuroAM/static/media/Glitch.d4fb872aa171663c85ca.png",
     "index.html": "/neuroAM/index.html",
-    "main.91ed9d55.css.map": "/neuroAM/static/css/main.91ed9d55.css.map",
+    "main.18b858b1.css.map": "/neuroAM/static/css/main.18b858b1.css.map",
     "main.00c0f868.js.map": "/neuroAM/static/js/main.00c0f868.js.map",
     "453.d5af7f2a.chunk.js.map": "/neuroAM/static/js/453.d5af7f2a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.91ed9d55.css",
+    "static/css/main.18b858b1.css",
     "static/js/main.00c0f868.js"
   ]
 }
